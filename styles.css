@@ -1,0 +1,152 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  /* margin: 40px; */
+  font-family: 'Avenir', 'sans-serif';
+  /* background-color: #fff; */
+  background-color: black;
+  /* color: #444; */
+  color: white;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr 2fr;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 4vw;
+  /* text-align: center; */
+}
+
+.title {
+  grid-column: 1;
+  grid-row: 1;
+
+
+}
+
+.split {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+/* The styling for the "Lines" part of the title comes from Jen Simmon's "Split fractured text" codepen: https://codepen.io/jensimmons/pen/zaVJPK  */
+
+h1, p {
+  margin: 0 0 1em 0;
+}
+
+h1 {
+	color: white;
+}
+
+h1::before, h1::after {
+		content: attr(data-heading);
+		position: absolute;
+		left: 0;
+		overflow: hidden;
+	}
+
+	/* // middle */
+h1::before {;
+		height: 50%;
+		/* color: white; */
+    color: black;
+		text-shadow: 3px -2px 5px black, -3px 3px 4px black;
+	}
+
+	/* // Top */
+h1::after {
+		transform: translateX(-5px);
+		height: 49%;
+		/* color: black; */
+    color: white;
+	}
+
+h1 {
+	/* top: 50%; */
+	/* left: 50%; */
+	/* transform: translate(-50%, -50%); */
+	position: absolute;
+	margin: 0;
+	font-size: 4vw;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+
+.wrapper {
+  max-width: 940px;
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+@media screen and (min-width: 600px) {
+
+  /* no grid support? */
+  /* .block-a, .block-b, .block-c {
+    float: left;
+    width: 19.1489%;
+  } */
+
+  .content {
+    /* float: right; */
+    /* width: 79.7872%; */
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-auto-rows: minmax(150px, auto);
+  }
+
+  .header, .footer {
+    grid-column: 1 / -1;
+    /* needed for the floated layout */
+    clear: both;
+  }
+
+  .block-a {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .block-b {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .block-c {
+    grid-column: 1;
+    grid-row: 6;
+  }
+
+  .content {
+    grid-column: 2;
+    grid-row: 2 / 7;
+  }
+
+}
+
+.wrapper > * {
+  /* background-color: #444; */
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
+  }
+}
