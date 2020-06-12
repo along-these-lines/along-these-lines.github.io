@@ -96,7 +96,8 @@ h1 {
 }
 
 .content {
-  font-family: 'EB Garamond', serif;  
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5em;  
 }
 
 @media screen and (min-width: 600px) {

@@ -1,9 +1,11 @@
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {
+  scrollFunction()
+};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+  if (window.scrollTop > 70 || document.documentElement.scrollTop > 70) {
 
     var titleText = document.getElementById("lines");
     titleText.style.color = '#EE9D00';
