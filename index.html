@@ -15,6 +15,23 @@
 </head>
 
 <body>
+  <script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+
+        var titleText = document.getElementById("lines");
+        titleText.style.color = '#EE9D00';
+        titleText.classList.add("fade");
+
+      } else {
+        document.getElementById("lines").style.color = "white";
+        var titleText = document.getElementById("lines");
+        titleText.classList.remove("fade");
+      }
+    }
+  </script>
   <div class="wrapper">
   <header id="header">
     <span class="title">Along These <h1 id="lines" data-heading="Lines">Lines</h1></span>
