@@ -2,9 +2,6 @@
 
 window.onscroll = function() {scrollFunction()};
 
-console.log(document.styleSheets[0].cssRules);
-
-
 function scrollFunction() {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
 
@@ -24,6 +21,7 @@ function scrollFunction() {
 
   } else {
     document.getElementById("lines").style.color = "white";
+    titleText = document.getElementById("lines");
     titleText.classList.remove("fade");
     // killCSSRule('#lines')
     // killCSSRule('.lines::after')
